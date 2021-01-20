@@ -1,6 +1,5 @@
 import pygame
 import random
-import time
 import math
 # Initialize the game engine
 pygame.init()
@@ -194,9 +193,8 @@ def Main():
 
         frameCount += 1
         pygame.display.flip()
-        clock.tick(66)
+        clock.tick(60)
     
-
 class Target:
     def __init__(self, x, y, length, height, xspd, yspd, image, animation_frame):
         self.x = x
@@ -215,6 +213,7 @@ class Target:
 
 class Player:
     def __init__(self, ammo, crosshair, spd_multiplier, lives):
+        #unused 
         self.ammo = ammo
         self.crosshair = crosshair
         self.spd_multiplier = spd_multiplier
@@ -286,13 +285,6 @@ def gameOver():
                 pygame.quit()  
                 
         screen.blit(notpog, [0,0])
-        font = pygame.font.SysFont('arial', 28, True, True)
-        text = font.render(("you let them get you... you let those foul mallards run right through you...") ,True, (0, 0, 0))
-        screen.blit(text, [0, 5]) 
-        text = font.render(("Well, I hope you happy with yourself. But I just want you to know that you could have won. There is an end to it all, but you werent good enough to reach it. Stew on that for a while before you try again.") ,True, (0, 0, 0))
-        screen.blit(text, [0, 50])
-        text = font.render(("There is an end to it all, but you werent good enough to reach it. Stew on that for a while before you try again.") ,True, (0, 0, 0))
-        screen.blit(text, [0, 95])
 
         pygame.display.update()
         clock.tick(15)
